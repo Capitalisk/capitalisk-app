@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const os = require('os');
 const objectAssignDeep = require('object-assign-deep');
 
-class LeaseholdApp {
+class CapitaliskApp {
   constructor({processStream}) {
     this.channel = null;
     this.options = {};
@@ -15,7 +15,7 @@ class LeaseholdApp {
   }
 
   get alias() {
-    return 'leasehold_app';
+    return 'capitalisk_app';
   }
 
   get dependencies() {
@@ -56,7 +56,7 @@ class LeaseholdApp {
 
   updateAppState(newAppState) {
     objectAssignDeep(this.appState, newAppState);
-    this.channel.publish('leasehold_app:state:updated', this.appState);
+    this.channel.publish('capitalisk_app:state:updated', this.appState);
   }
 
   async load(channel, options) {
@@ -77,7 +77,7 @@ class LeaseholdApp {
     (async () => {
       for await (let [data] of this.processStream.listener('message')) {
         if (data && data.event === 'appReady') {
-          this.channel.publish('leasehold_app:ready');
+          this.channel.publish('capitalisk_app:ready');
           break;
         }
       }
@@ -87,4 +87,4 @@ class LeaseholdApp {
   async unload() {}
 };
 
-module.exports = LeaseholdApp;
+module.exports = CapitaliskApp;

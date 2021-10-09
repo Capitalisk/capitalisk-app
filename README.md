@@ -1,2 +1,2 @@
-# leasehold-app
-Leasehold app module for LDEM.
+# capitalisk-app
+Capitalisk app module for LDEM.
