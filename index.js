@@ -37,7 +37,7 @@ class CapitaliskApp {
         }
       },
       getComponentConfig: {
-        handler: (action) => this.options.components[action.params]
+        handler: (action) => this.options.components[action.params.componentName]
       },
       getModuleState: {
         handler: (action) => this.appState.modules[action.params.moduleName]
