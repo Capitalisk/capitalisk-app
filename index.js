@@ -68,7 +68,6 @@ class CapitaliskApp {
       ...options.nodeInfo,
       os: this.os,
       nonce: this.nonce,
-      height: 1,
       wsPort: mainNetworkConfig.wsPort || options.defaultWSPort,
       httpPort: mainHTTPAPIConfig.httpPort || options.defaultHTTPPort,
       modules: {}
